@@ -11,7 +11,7 @@ def index():
     #     return jsonify(releases=[r.to_json() for r in releases])
     print('test')
     return render_template(
-        'general/index1.html'#,
+        'general/index.html'#,
         # latest_release=releases[-1],
         # pdf link does not redirect, needs version
         # docs version only includes major.minor
