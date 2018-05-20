@@ -18,11 +18,11 @@ def index():
         # docs_pdf_version='.'.join(releases[-1].version.split('.', 2)[:2])
     )
 
-@mod.route('/onecolumn')
-def onecolumn():
+@mod.route('/profile')
+def profile():
     print('test')
     return render_template(
-        'general/onecolumn.html',
+        'general/profile.html',
     )
 
 @mod.route('/twocolumn1')

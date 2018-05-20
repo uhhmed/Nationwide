@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+{% block head %}
+  {{ super() }}
+  <style type=text/css>
+    h1 { margin: 0 0 30px 0; background: url({{ url_for('static', filename='logo.png') }}) no-repeat center; height: 165px; }
+    h1 span, p.tagline { display: none; }
+  </style>
+  <script type=text/javascript>
+    $(function() {
+      $('h1').bind('mousedown contextmenu', function(event) {
+        if (event.button != 2)
+          return;
+        var box = $('div.logohint');
+        if (!box.is(':visible'))
+          box.animate({'height': 'show', 'opacity': 'show'}, 100);
+        event.preventDefault();
+        event.returnValue = false;
+        return false;
+      });
+    });
+  </script>
+  <link rel="stylesheet" href="static/css/circle.css" />
+{% endblock %}
+{% block body %}
+  {{ super() }}
+      <div id="page-wrapper">
+      <div id="main">
+        <div class="container">
+          <div class="row main-row">
+            <div class="12u">
+
+              <section>
+                <div class="grid">
+  <section>
+    <h2>Positive chart value</h2>
+    <svg class="circle-chart" viewbox="0 0 33.83098862 33.83098862" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+      <circle class="circle-chart__background" stroke="#efefef" stroke-width="2" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
+      <circle class="circle-chart__circle" stroke="#00acc1" stroke-width="2" stroke-dasharray="30,100" stroke-linecap="round" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
+      <g class="circle-chart__info">
+        <text class="circle-chart__percent" x="16.91549431" y="15.5" alignment-baseline="central" text-anchor="middle" font-size="8">30%</text>
+        <text class="circle-chart__subline" x="16.91549431" y="20.5" alignment-baseline="central" text-anchor="middle" font-size="2">Yay 30% progress!</text>
+      </g>
+    </svg>
+  </section>
+
+  <section>
+    <h2>Negative chart value</h2>
+    <svg class="circle-chart" viewbox="0 0 33.83098862 33.83098862" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+      <circle class="circle-chart__background" stroke="#efefef" stroke-width="2" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
+      <circle class="circle-chart__circle circle-chart__circle--negative" stroke="#00acc1" stroke-width="2" stroke-dasharray="10,100" stroke-linecap="round" fill="none" cx="16.91549431" cy="16.91549431" r="15.91549431" />
+      <g class="circle-chart__info">
+        <text class="circle-chart__percent" x="16.91549431" y="15.5" alignment-baseline="central" text-anchor="middle" font-size="8">-10%</text>
+        <text class="circle-chart__subline" x="16.91549431" y="20.5" alignment-baseline="central" text-anchor="middle" font-size="2">Oh no :(</text>
+      </g>
+    </svg>
+  </section>
+</div>
+  Better Driver
+  <p class=tagline>because sometimes a pocket knife is not enough
+  <div class=logohint style="display: none">
+    <p>
+      Are you interested in the logo?  We have it available in large versions so
+      please if you use it head over to the <a href="{{ url_for('general.index') }}">logo
+      page</a> for the logo and the usage guidelines.
+    </p>
+      Quicklinks: <a href="{{ url_for('static', filename='logo/betterdriver.png') }}">PNG</a>
+      and <a href="{{ url_for('static', filename='logo/betterdriver.png') }}">EPS</a>
+  </div>
+  </p>
+  <blockquote>
+    Hacking at a <a href="{{ url_for('general.index', page='license') }}">hackathon!</a>
+  </blockquote>
+  </section>
+
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+
+{% endblock %}
