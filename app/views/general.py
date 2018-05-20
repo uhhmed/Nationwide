@@ -17,3 +17,28 @@ def index():
         # docs version only includes major.minor
         # docs_pdf_version='.'.join(releases[-1].version.split('.', 2)[:2])
     )
+
+@mod.route('/profile')
+def profile():
+    print('test')
+    return render_template(
+        'general/profile.html',
+    )
+
+@mod.route('/twocolumn1')
+def twocolumn1():
+    return render_template(
+        'general/twocolumn1.html',
+    )
+
+@mod.route('/twocolumn2')
+def twocolumn2():
+    return render_template(
+        'general/twocolumn2.html',
+    )
+
+@mod.route('/threecolumn')
+def threecolumn():
+    return render_template(
+        'general/threecolumn.html',
+    )

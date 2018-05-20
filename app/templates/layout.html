@@ -1,12 +1,43 @@
 <!doctype html>
 {% block head %}
-<title>{% block title %}Welcome{% endblock %} | Flask (A Python Microframework)</title>
+<title>{% block title %}Welcome{% endblock %} | Better Driver</title>
 <meta charset=utf-8>
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
 <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
 <script type=text/javascript
   src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lte IE 8]><script src="/static/assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="/static/assets/css/main.css" />
+    <!--[if lte IE 9]><link rel="stylesheet" href="/static/assets/css/ie9.css" /><![endif]-->
+
 {% endblock %}
+  {% block body %}
+
+    <div id="page-wrapper">
+      <div id="header-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="12u">
+
+              <header id="header">
+                <h1><a href="#" id="logo">Minimaxing</a></h1>
+                <nav id="nav">
+                  <a id="page1" href="{{ url_for('general.index') }}">Home</a>
+                  <a id="page2" href="{{ url_for('general.index') }}">Data</a>
+                  <a id="page3" href="{{ url_for('general.profile') }}?_id=5b010e6eb7e58e7d1cc46450">Profile</a>
+                  <!-- <a href="{#{{ url_for('general.onecolumn') }}#}">One Column</a>
+                  <a href="{#{{ url_for('general.threecolumn') }}#}">Three Column</a> -->
+                </nav>
+              </header>
+
+            </div>
+          </div>
+        </div>
+      </div>
+  {% endblock %}
 <div class=box>
   {% block body_title %}
     <h1><span>{{ self.title() }}</span></h1>
@@ -17,7 +48,8 @@
   {% for message in get_flashed_messages() %}
     <p class=message>{{ message }}
   {% endfor %}
-  {% block body %}{% endblock %}
+
   <p class=footer>
     &copy; 2018 - {{ current_year }} by <a href=http://nationwidehackathon.com//>Better Driver</a>
 </div>
+
