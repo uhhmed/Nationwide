@@ -39,7 +39,7 @@ def add_user():
         'avg_accel' : avg_accel,
         })
     new_user = user.find_one({'_id': user_id })
-    print(user)
+    print(user_id)
     output = {
         'name': new_user['name'],
         'score': new_user['score'],
